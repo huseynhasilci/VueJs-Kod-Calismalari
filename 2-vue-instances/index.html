@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- {{ cahngerTitle('Bu başlangicta degisecek bir bilgidir.')}} -->
+        <h1> {{title}} </h1> <!-- ! burası app.js tarafından vue üzerinden geldi "title" -->
+        <p> {{content}} </p>
+        <a :target="eduflow.target" :href="eduflow.url" v-bind:alt="eduflow.alt" v-bind:kablosuzkedi="owner"> {{eduflow.title}} </a> <!-- ! burası app.js tarafından vue üzerinden geldi "url" -->
+        <br>
+        <br>
+        <button v-on:click="cahngerTitle('1. button')">Title Degistir...</button>
+        <button v-on:click="cahngerTitle('2. bottuopn')">Title 2 Degistir...</button>
+        <div @mousemove="updadateCoords('mouseeMooove',$event)" class="box" @click="cahngerTitle('Box uzerinden gelen')"></div>
+        <span>{{coords.x}},{{coords.y}}</span>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
