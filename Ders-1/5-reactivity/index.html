@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter</title>
+    <title>Reactivity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    
-
-    <div class="container">
+    <div id="app" class="container">
         <div class="row mt-5">
-            <div class="col-2 card offset-4 p-2">
-                <h3>4555</h3>
-                <div class="d-flex justify-content-center align-items-center">
-                    <button class="btn me-2 btn-sm btn-primary">+</button>
-                    <button class="btn btn-sm btn-danger">-</button>
-                </div>
-                
+            <div class="col-4 offset-4 p-2 card">
+                <input type="text" name="" id="" v-model="search"> <!-- @keydown.enter="searchList" -->
+                <button class="btn btn-sm btn-primary" @click="searchList">Ara</button>
+                <pre>
+                    {{itemList}}
+                </pre>
+                <pre>
+                    {{filteredList}}
+                </pre>
             </div>
         </div>
     </div>
+
+
 
     <script src="app.js"></script>
 </body>
