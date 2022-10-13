@@ -10,8 +10,26 @@ const app = Vue.createApp({
                 phone: "123123"
             },
             details: `<a href="https://www.youtube.com/">Müfredat için tıklanınız</a>`,
-            url:"https://www.youtube.com/"
+            url:"https://www.youtube.com/",
+            coordX:0,
+            coordY:0,
+            fullName: "Gokhan Kandemir"
         };
-    }
-
+    },
+    methods: {
+        updateTitle(title){
+            this.title = title || "Bu benim yenim mesajım";
+            this.fullName = "Degistirildi";
+        },
+        updateCoords(e){
+            this.coordX=e.offsetX;
+            this.coordY=e.offsetY;
+            this.updateTitle(`${this.coordX},${this.coordY}`);
+            
+        },
+        updateValue(customText,event){
+            console.log(customText);
+            this.fullName = event.target.value;
+        }
+    },
 }).mount('#app');
