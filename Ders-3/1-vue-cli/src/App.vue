@@ -6,6 +6,7 @@
     <p>Bugün compjene ve Vue CLI Konularını görüyortuz</p>
   </div>
   <CounterITem></CounterITem>
+  <CounterITem></CounterITem>
 </template>
 
 <script>
