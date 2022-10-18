@@ -4,14 +4,15 @@
             <span>To-do Item {{todoItem.text}}</span>
             <button @click="deleteItem(todoItem)" class="sm red">Sil</button>
         </li> -->
-        <TodoListItem v-for="item in myData" :key="item.id" :item="item"></TodoListItem>
+        <TodoListItem @delete-todo-item="$emit('delete-todo-item',$event)" v-for="item in provideData.todoList" :key="item.id" :item="item"></TodoListItem>
     </ul>
 </template>
 
 <script>
     import TodoListItem from './TodoListItem.vue';
     export default{
-        props:["myData"],
+        // props:["myData"],
+        inject:["provideData"],
         // data:{
         //     return{
 
