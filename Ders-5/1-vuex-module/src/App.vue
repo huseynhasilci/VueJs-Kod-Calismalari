@@ -1,19 +1,21 @@
 <template>
+  <div>
+    <p>
+      {{$store.state.mainName}}
+
+    </p>
+
+    <p>
+
+      {{ $store.state.contact.contactName}}
+    </p>
+
+    <p>
+
+      {{contact}}
+    </p>
+  </div>
   
-  <p>
-    {{$store.state.mainName}}
-
-  </p>
-
-  <p>
-
-    {{ $store.state.contact.contactName}}
-  </p>
-
-  <p>
-
-    {{contact}}
-  </p>
 
 
 
