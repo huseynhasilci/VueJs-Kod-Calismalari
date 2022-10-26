@@ -1,3 +1,22 @@
 {
-    "bookmarks":[]
+  "bookmarks": [
+    {
+      "title": "zxasda",
+      "url": "asdad",
+      "description": null,
+      "id": 1
+    },
+    {
+      "title": "zxasda",
+      "url": "asdad",
+      "description": null,
+      "id": 2
+    },
+    {
+      "title": "asda",
+      "url": "asd",
+      "description": null,
+      "id": 4
+    }
+  ]
 }
