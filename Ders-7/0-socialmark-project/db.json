@@ -1,5 +1,24 @@
 {
-    "users": [],
-    "bookmarks": [],
-    "categories": []
+  "users": [
+    {
+      "username": "uumu",
+      "fullname": "asdsada",
+      "password": "U2FsdGVkX19B0C95UzVVSuiTpNiKSQKFmW/Pj3CMC4A=",
+      "id": 1
+    },
+    {
+      "username": "1231",
+      "fullname": "123123",
+      "password": "U2FsdGVkX19D/4OHoTGYrFwhDPYqicIzOp0MBNxXuUg=",
+      "id": 2
+    },
+    {
+      "username": "123",
+      "fullname": "123",
+      "password": "U2FsdGVkX1+laJb6wHx2m2sdUuXr593iBMMleYGbtcs=",
+      "id": 3
+    }
+  ],
+  "bookmarks": [],
+  "categories": []
 }

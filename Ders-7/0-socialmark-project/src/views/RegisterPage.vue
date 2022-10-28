@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import CryptoJS from "crypto-js";
 export default {
   data(){
     return{
@@ -29,7 +30,20 @@ export default {
   },
   methods:{
     onSave(){
-      console.log(this.userData);
+      const password = this.userData.password;
+      //const key = "booklike123!456?";
+      const cryeptedPassword = CryptoJS.AES.encrypt(password,this.$store.getters._saltKey).toString();
+      this.$appAxios.post("/users", { ...this.userData, password: cryeptedPassword}).then(registered_user => {
+        console.log('registered_user :>> ', registered_user);
+        this.$router.push({name: "Home"})
+      });
+
+      //this.userData.password = cryeptedPassword;
+
+      // const decryptedPassword = CryptoJS.AES.decrypt(cryeptedPassword,key).toString(CryptoJS.enc.Utf8);
+      // console.log(decryptedPassword);
+      // console.log(cryeptedPassword);
+      // console.log(this.userData);
     }
   }
 }
