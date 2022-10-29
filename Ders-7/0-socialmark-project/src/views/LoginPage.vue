@@ -27,11 +27,21 @@
     },
     methods:{
       onSubmit(){
+        
         const password = this.userData.password;
         
-        const cryeptedPassword = CryptoJS.AES.encrypt(password,this.$store.getters._saltKey).toString();
+        const cryeptedPassword = CryptoJS.HmacSHA1(password,this.$store.getters._saltKey).toString();
+        console.log(cryeptedPassword);
+        console.log(this.userData.username);
         this.$appAxios.get(`/users?username=${this.userData.username}&password=${cryeptedPassword}`).then(login_response => {
           console.log(login_response);
+          if (login_response.data.length >= 1){
+            this.$store.commit("setUser",login_response?.data[0]);
+            this.$router.push({name:"Home"});
+          }
+          else{
+            alert("Böyle bir kullanıcı bulunmamaktadır.");
+          }          
         }).catch(e => {
           console.log('e :>> ', e);
         })
