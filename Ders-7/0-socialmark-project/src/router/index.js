@@ -3,6 +3,7 @@ import HomePage from "@/views/HomePage.vue";
 import LoginPage from "@/views/LoginPage.vue";
 import RegisterPage from "@/views/RegisterPage.vue";
 import NewBookmark from "@/views/NewBookmark.vue";
+import FavorivtesPage from "@/views/AccountPage.vue";
 import store from "@/store";
 
 
@@ -26,6 +27,29 @@ const routes = [
         name:"NewBookmarkPage",
         path: "/new",
         component: NewBookmark
+    },
+    {
+        name:"Favorites",
+        path: "/favorites",
+        meta: {
+            componentName:"appBookmarkList"
+        },
+        component: FavorivtesPage
+    },
+    {
+        name:"Likes",
+        path: "/likes",
+        meta:{
+            componentName:"appBookmarkList"
+        },
+        component: FavorivtesPage
+    },
+    {
+        name:"Settings",
+        path: "/settings",
+        meta: {componentName: "userSettings"
+        },
+        component: FavorivtesPage
     }
 ]
 

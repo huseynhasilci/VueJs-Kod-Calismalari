@@ -10,19 +10,23 @@
       "username": "1231",
       "fullname": "123123",
       "password": "eb5b044b0c244d97ca159919d7cf8c469dd853d7",
-      "id": 2,
-      "likes": [],
-      "bookmarks": [
-        1,
-        3
-      ]
+      "id": 2
+    },
+    {
+      "username": "123",
+      "fullname": "123",
+      "password": "eb5b044b0c244d97ca159919d7cf8c469dd853d7",
+      "id": 3
+    },
+    {
+      "username": "123",
+      "fullname": "123",
+      "password": "682d0c21835b9cb5cbdbb71076c7846dccd42b44",
+      "id": 4
     }
   ],
   "bookmarks": [
     {
-      "title": "1231231",
-      "url": "1231231231",
-      "categoryId": 2,
       "userId": 4,
       "created_at": "2022-11-05T10:23:18.982Z",
       "id": 1
@@ -30,7 +34,7 @@
     {
       "title": "123",
       "url": "123",
-      "categoryId": 2,
+      "category_id": 2,
       "description": "123",
       "userId": 4,
       "created_at": "2022-11-05T10:28:24.177Z",
@@ -39,29 +43,11 @@
     {
       "title": "1231",
       "url": "12312",
-      "categoryId": 3,
+      "category_id": 3,
       "description": "12313",
       "userId": 4,
       "created_at": "2022-11-05T11:01:40.978Z",
       "id": 3
-    },
-    {
-      "title": "dümenden marvel",
-      "url": "1231",
-      "categoryId": 6,
-      "description": "dümenden marvel",
-      "userId": 4,
-      "created_at": "2022-11-05T17:40:48.069Z",
-      "id": 4
-    },
-    {
-      "title": "1231123212321332132112",
-      "url": "123",
-      "categoryId": 2,
-      "description": "12231132312132231321",
-      "userId": 2,
-      "created_at": "2022-11-05T19:48:35.169Z",
-      "id": 5
     }
   ],
   "categories": [
@@ -89,6 +75,5 @@
       "name": "Sosyal",
       "id": 6
     }
-  ],
-  "likes": []
+  ]
 }
