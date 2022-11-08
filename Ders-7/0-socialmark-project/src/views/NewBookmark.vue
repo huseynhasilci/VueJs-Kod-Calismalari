@@ -63,6 +63,11 @@ export default {
           categoryId: null,
           description: null
         },
+        this.$socket.emit("NEW_BOOKMARK_EVENT",{
+          ...save_bookmark_response.data,
+          user: this._getCurrentUser,
+          category: this.categoryList?.find(c => c.id === saveData.categoryId)
+        });
         this.$router.push({ name: "Home"})
       });
 

@@ -62,6 +62,15 @@
       "userId": 2,
       "created_at": "2022-11-05T19:48:35.169Z",
       "id": 5
+    },
+    {
+      "title": "yeni yer imi",
+      "url": "https://",
+      "categoryId": 2,
+      "description": "yeni yer imi",
+      "userId": 2,
+      "created_at": "2022-11-08T12:42:33.218Z",
+      "id": 6
     }
   ],
   "categories": [
