@@ -1,1 +1,3 @@
 {"level":"info","message":{"_id":"637bd94241a603258490faf8","createdAt":"2022-11-21T20:02:10.468Z","name":"Logger Test","updatedAt":"2022-11-21T20:02:10.468Z"},"service":"user-service"}
+{"level":"info","message":{"_id":"637cd31ca9633c551041fba3","createdAt":"2022-11-22T13:48:12.355Z","email":"husocan@gmail.com","full_name":"Huseyin","password":"1231231123","updatedAt":"2022-11-22T13:48:12.355Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"637cdac273676b0fa08a107c","createdAt":"2022-11-22T14:20:50.492Z","email":"husocan@gmail.com","full_name":"Huseyin","password":"54591c6eed132b92f14cfe7fa9ed804901cb208aba0f7262eae247e4083dc5a2","updatedAt":"2022-11-22T14:20:50.492Z"},"service":"project-service"}
