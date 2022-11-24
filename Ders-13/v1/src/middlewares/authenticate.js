@@ -13,7 +13,7 @@ const authenticateToken = (req,res,next) => {
         if (err){
             return res.status(httpStatus.FORBIDDEN).send({error: err }) // "Token süresi geçmiş"
         }
-        req.user = user;
+        req.user = user?._doc;
         next();
     });
 

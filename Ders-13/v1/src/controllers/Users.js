@@ -1,7 +1,10 @@
-const { insert, list, loginUser } = require("../services/Users");
+const { insert, list, loginUser,modify } = require("../services/Users");
+const projectService = require("../services/Projects");
 const httpStatus = require("http-status"); 
 const { passwordToHash, generateAccessToken, generateRefreshToken } = require("../scripts/utils/helper");
 const { response } = require("express");
+const uuid = require("uuid");
+const eventEmitter = require("../scripts/events/eventEmitter");
 
 
 const create = (req,res) => {
@@ -47,8 +50,57 @@ const index = (req,res) => {
     
 }
 
+const projectList = (req,res) => {
+    
+    projectService.list({user_id: req.user?._id}).then(projects => {
+        res.status(httpStatus.OK).send(projects);
+    })
+    .catch(e => {
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).send(e);
+    })
+}
+
+const resetPassword = (req,res) => {
+    //eventEmitter.emit("send_email","Buda benim datam");
+    //return false;
+    const new_password = uuid.v4()?.split("-")[0] || `usr-${new Date().getTime()}`
+    modify({email:req.body.email},{password:passwordToHash(new_password)}).then(updatedUser => {
+        if(!updatedUser){
+            return res.status(httpStatus.NOT_FOUND).send({error: "Böyle bir kullanıcı bulunmamaktadır"});
+        }
+        eventEmitter.emit("send_email",{ 
+            to: updatedUser.email, // list of receivers
+            subject: "Sifre sifirlama ✔", // Subject line
+            html: `Talebiniz üzerine şifre sıfırlama işleminiz gerçekleşmiştir <br /> Giriş Yaptıktan sonra şifrenizi değiştirmeyi unutmayın <br /> ${new_password} <b>Hello world?</b>`,
+        });
+        res.status(httpStatus.OK).send({
+            message: "Şifre sıfırmala işlemi için sisteme kayıtlı e-posta adresinize gerekej bilgileri gönderdik"
+        })
+    })
+    .catch(e => {
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).send({error: "sifre resetleme sirasinda bir sorun olustu"});
+    })
+}
+
+
+const update = (req,res) => {
+    // if(!req.user){
+    //     return res.status(httpStatus.).send({error: "Bu işlemi yapabilmek için ilk olarak giriş yapmalısınız"})
+    // }
+    modify({_id:req.user?._id},req.body).then(updatedUser => {
+        res.status(httpStatus.OK).send(updatedUser);
+    })
+    .catch(e => {
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).send({error: "Güncelleme işlemi sırasında bir problem meydana geldi"})
+    })
+}
+
+
 module.exports= {
     create,
     index,
-    login
+    login,
+    projectList,
+    resetPassword,
+    update
 }
