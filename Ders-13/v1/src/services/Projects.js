@@ -12,7 +12,7 @@ const insert = (projectData) => {
 const list = (where) => {
     return Projects.find(where || {}).populate({
         path: "user_id",
-        select: "full_name email",
+        select: "full_name email photo",
     });
 }
 
@@ -29,10 +29,13 @@ const modify = (data,id) => {
     // })
 }
 
-
+const remove = (id) => {
+    return Projects.findByIdAndDelete(id);
+}
 
 module.exports = {
     insert,
     list,
     modify,
+    remove
 }

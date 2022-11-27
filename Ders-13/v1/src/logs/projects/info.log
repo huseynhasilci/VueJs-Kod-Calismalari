@@ -4,3 +4,5 @@
 {"level":"info","message":{"_id":"637f8378e5ddfdc75fba4d11","createdAt":"2022-11-24T14:45:12.633Z","name":"Deneme Deneme","updatedAt":"2022-11-24T14:45:12.633Z"},"service":"project-service"}
 {"level":"info","message":{"_id":"637f85299c05351c611d40cf","createdAt":"2022-11-24T14:52:25.253Z","name":"Deneme 123312132","updatedAt":"2022-11-24T14:52:25.253Z"},"service":"project-service"}
 {"level":"info","message":{"_id":"637f8567011588703db799a5","createdAt":"2022-11-24T14:53:27.418Z","name":"Deneme 123312132","updatedAt":"2022-11-24T14:53:27.418Z","user_id":"637cdac273676b0fa08a107c"},"service":"project-service"}
+{"level":"info","message":{"_id":"63834d84fa789c0e49fc6000","createdAt":"2022-11-27T11:44:04.680Z","email":"felo@asana.app","full_name":"Ocn Yılmaz","password":"aa4e39fd23fde25af427c6093e722b6144b20e1b5dc02c75a336728d9697b909","updatedAt":"2022-11-27T11:44:04.680Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"63834e62fa789c0e49fc6004","createdAt":"2022-11-27T11:47:46.714Z","name":"Felakettin Projesi","updatedAt":"2022-11-27T11:47:46.714Z","user_id":"63834d84fa789c0e49fc6000"},"service":"project-service"}

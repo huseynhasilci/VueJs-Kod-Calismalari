@@ -1,4 +1,4 @@
-const { insert, modify, list } = require("../services/Projects");
+const { insert, modify, list, remove } = require("../services/Projects");
 const httpStatus = require("http-status"); 
 
 const create = (req,res) => {
@@ -39,9 +39,30 @@ const update = (req,res) => {
 
 }
 
+const deleteProject = (req,res) => {
+    if(!req.params?.id){
+        return res.status(httpStatus.BAD_REQUEST).send({
+            message: "ID bilgisi eksiktir"
+        });
+    }
+    remove(req.params?.id).then(deletedProject => {
+        if(!deletedProject){
+            return res.status(httpStatus.NOT_FOUND).send({
+                message: "Böyle bir kayıt bulunmamaktadır."
+            });
+        }
+        
+        res.status(httpStatus.OK).send({message: "Proje silinmiştir"});
+    })
+    .catch(e => {
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).send(e);
+    })
+}
+
 
 module.exports= {
     create,
     index,
-    update
+    update,
+    deleteProject
 }
